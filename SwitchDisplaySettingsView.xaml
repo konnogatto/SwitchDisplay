@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="SwitchDisplay.SwitchDisplaySettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="400" d:DesignWidth="600">
+    <StackPanel>
+        <CheckBox IsChecked="{Binding SwitchDisplays}" Content="Switch displays:" />
+        <TextBlock Text="Fullscreen Display:"/>
+        <ComboBox ItemsSource="{Binding EnumerateDisplays}" SelectedValue="{Binding FullscreenDisplay, Mode=TwoWay}" SelectedValuePath="Key" DisplayMemberPath="Value" />
+        <TextBlock Text="Default Display:"/>
+        <ComboBox ItemsSource="{Binding EnumerateDisplays}" SelectedValue="{Binding DefaultDisplay, Mode=TwoWay}" SelectedValuePath="Key" DisplayMemberPath="Value" />
+        <Separator Height="10" Margin="0"/>
+        <CheckBox IsChecked="{Binding SwitchAudio}" Content="Switch audio:" />
+        <TextBlock Text="Fullscreen Audiodevice:"/>
+        <ComboBox ItemsSource="{Binding EnumerateAudioDevices}" SelectedValue="{Binding FullscreenAudioDevice, Mode=TwoWay}" SelectedValuePath="Key"  DisplayMemberPath="Value" />
+        <TextBlock Text="Default Audiodevice:"/>
+        <ComboBox ItemsSource="{Binding EnumerateAudioDevices}" SelectedValue="{Binding DefaultAudioDevice, Mode=TwoWay}" SelectedValuePath="Key" DisplayMemberPath="Value" />
+        
+    </StackPanel>
+</UserControl>
