@@ -82,9 +82,24 @@ namespace SwitchDisplay
                 }
 
                 //Audio
-                if (settings.SwitchAudio && !String.IsNullOrEmpty(settings.FullscreenAudioDevice))
+                if (settings.SwitchAudio && settings.FullScreenAudioDeviceList.Count > 0)
                 {
-                    _policyConfigClient.SetDefaultEndpoint(settings.FullscreenAudioDevice, Role.Multimedia);
+                    //search available device
+                    foreach(KeyValuePair<string, string> device in settings.FullScreenAudioDeviceList)
+                    {
+                        string id = "";
+                        if (settings.EnumerateAudioDevices.ContainsKey(device.Key) || settings.EnumerateAudioDevices.ContainsValue(device.Value))
+                        {
+                            id = device.Key;
+                        }
+                        if(id.Length > 0)
+                        {
+                            _policyConfigClient.SetDefaultEndpoint(id, Role.Multimedia);
+                            break;
+                        }
+
+                    }
+                    
                 }
             }
 
@@ -123,9 +138,8 @@ namespace SwitchDisplay
 
         public override UserControl GetSettingsView(bool firstRunSettings)
         {
-            return new SwitchDisplaySettingsView();
+            return new SwitchDisplaySettingsView(settings);
         }
-
 
     }
 }

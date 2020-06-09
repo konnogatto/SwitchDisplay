@@ -73,6 +73,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="SwitchDisplaySettingsView.xaml">

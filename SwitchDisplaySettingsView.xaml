@@ -14,9 +14,25 @@
         <Separator Height="10" Margin="0"/>
         <CheckBox IsChecked="{Binding SwitchAudio}" Content="Switch audio:" />
         <TextBlock Text="Fullscreen Audiodevice:"/>
-        <ComboBox ItemsSource="{Binding EnumerateAudioDevices}" SelectedValue="{Binding FullscreenAudioDevice, Mode=TwoWay}" SelectedValuePath="Key"  DisplayMemberPath="Value" />
+        <Grid HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ListBox Grid.Column="0" Grid.Row="0" Name="DevicesOrderList"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  ItemsSource="{Binding FullScreenAudioDeviceList}" DisplayMemberPath="Value" SelectionMode="Single" Height="120" Margin="0,0,0,5"/>
+            <WrapPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Height="100" VerticalAlignment="Top" Orientation="Vertical" Width="150">
+                <Button x:Name="MoveAudioDeviceUp" Content="Up" HorizontalAlignment="Stretch" Click="MoveAudioDeviceUp_Click"/>
+                <Button x:Name="MoveAudioDeviceDown" Content="Down" HorizontalAlignment="Stretch" Click="MoveAudioDeviceDown_Click"/>
+                <Button x:Name="RemoveAudioDevice" Content="Remove" Click="RemoveAudioDevice_Click" Width="100"/>
+            </WrapPanel>
+            <ComboBox  Grid.Column="0" Grid.Row="1" x:Name="FullscreenAudioDeviceList" HorizontalAlignment="Stretch" ItemsSource="{Binding EnumerateAudioDevices, Mode=OneWay}" SelectedValuePath="Key" DisplayMemberPath="Value" VerticalAlignment="Top"/>
+            <Button  Grid.Column="1" Grid.Row="1" Name="AddFullscreenAudioDevice" Content="Add" HorizontalAlignment="Stretch" Click="AddFullscreenAudioDevice_Click" Width="100"/>
+        </Grid>
         <TextBlock Text="Default Audiodevice:"/>
         <ComboBox ItemsSource="{Binding EnumerateAudioDevices}" SelectedValue="{Binding DefaultAudioDevice, Mode=TwoWay}" SelectedValuePath="Key" DisplayMemberPath="Value" />
-        
     </StackPanel>
 </UserControl>
