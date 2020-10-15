@@ -4,6 +4,7 @@ using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace SwitchDisplay
@@ -88,9 +89,12 @@ namespace SwitchDisplay
                     foreach(KeyValuePair<string, string> device in settings.FullScreenAudioDeviceList)
                     {
                         string id = "";
-                        if (settings.EnumerateAudioDevices.ContainsKey(device.Key) || settings.EnumerateAudioDevices.ContainsValue(device.Value))
+                        if (settings.EnumerateAudioDevices.ContainsKey(device.Key))
                         {
                             id = device.Key;
+                        } else if (settings.EnumerateAudioDevices.ContainsValue(device.Value))
+                        {
+                            id = settings.EnumerateAudioDevices.First(p => p.Value == device.Value).Value;
                         }
                         if(id.Length > 0)
                         {

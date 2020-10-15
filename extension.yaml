@@ -1,6 +1,7 @@
-﻿Name: Switches primary screen and audio device
+﻿Id: SwitchDisplay
+Name: Switches primary screen and audio device
 Author: Konnogatto
-Version: 0.0.2
+Version: 0.0.3
 Module: SwitchDisplay.dll
 Type: GenericPlugin
 Icon: icon.png
