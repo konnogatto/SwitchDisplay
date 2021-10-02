@@ -6,12 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
+using Playnite.SDK.Events;
 
 namespace SwitchDisplay
 {
     public class SwitchDisplay : Plugin
     {
-        
+
         private static readonly ILogger logger = LogManager.GetLogger();
 
         private SwitchDisplaySettings settings { get; set; }
@@ -35,40 +36,8 @@ namespace SwitchDisplay
             _policyConfigClient = new PolicyConfigClient();
         }
 
-        public override IEnumerable<ExtensionFunction> GetFunctions()
-        {
-            return new List<ExtensionFunction>
-            {
-                
-            };
-        }
 
-        public override void OnGameInstalled(Game game)
-        {
-            // Add code to be executed when game is finished installing.
-        }
-
-        public override void OnGameStarted(Game game)
-        {
-            // Add code to be executed when game is started running.
-        }
-
-        public override void OnGameStarting(Game game)
-        {
-            // Add code to be executed when game is preparing to be started.
-        }
-
-        public override void OnGameStopped(Game game, long elapsedSeconds)
-        {
-            // Add code to be executed when game is preparing to be started.
-        }
-
-        public override void OnGameUninstalled(Game game)
-        {
-            // Add code to be executed when game is uninstalled.
-        }
-
-        public override void OnApplicationStarted()
+        public override void OnApplicationStarted(OnApplicationStartedEventArgs args)
         {
             if(api.ApplicationInfo.Mode == ApplicationMode.Fullscreen)
             {
@@ -79,7 +48,7 @@ namespace SwitchDisplay
                     {
                         logger.Error(String.Format("Error setting primary display: {0}", settings.FullscreenDisplay));
                     }
-                    
+
                 }
 
                 //Audio
@@ -103,13 +72,13 @@ namespace SwitchDisplay
                         }
 
                     }
-                    
+
                 }
             }
 
         }
 
-        public override void OnApplicationStopped()
+        public override void OnApplicationStopped(OnApplicationStoppedEventArgs args)
         {
             if (api.ApplicationInfo.Mode == ApplicationMode.Fullscreen)
             {
@@ -128,11 +97,6 @@ namespace SwitchDisplay
                     _policyConfigClient.SetDefaultEndpoint(settings.DefaultAudioDevice, Role.Multimedia);
                 }
             }
-        }
-
-        public override void OnLibraryUpdated()
-        {
-            // Add code to be executed when library is updated.
         }
 
         public override ISettings GetSettings(bool firstRunSettings)
