@@ -10,7 +10,7 @@ using Playnite.SDK.Events;
 
 namespace SwitchDisplay
 {
-    public class SwitchDisplay : Plugin
+    public class SwitchDisplay : GenericPlugin
     {
 
         private static readonly ILogger logger = LogManager.GetLogger();
@@ -34,6 +34,11 @@ namespace SwitchDisplay
             Handler = new DisplayHandler();
             AudioEnumerator = new MMDeviceEnumerator();
             _policyConfigClient = new PolicyConfigClient();
+
+            Properties = new GenericPluginProperties
+            {
+                HasSettings = true
+            };
         }
 
 
