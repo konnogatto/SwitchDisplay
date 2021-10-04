@@ -1,0 +1,10 @@
+AddonId: konnogatto_SwitchDisplay
+Packages:
+- Version: 0.0.5
+  RequiredApiVersion: 6.0.0
+  ReleaseDate: 2021-10-03
+  PackageUrl: https://github.com/konnogatto/SwitchDisplay/releases/download/v0.0.5/Switch_Display_0_0_5.pext
+  Changelog:
+    - Support for Playnite 9
+    - Update NAudio dependency version
+
