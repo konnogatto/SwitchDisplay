@@ -1,10 +1,10 @@
 AddonId: konnogatto_SwitchDisplay
 Packages:
-- Version: 0.0.5
+- Version: 0.0.6
   RequiredApiVersion: 6.0.0
-  ReleaseDate: 2021-10-03
-  PackageUrl: https://github.com/konnogatto/SwitchDisplay/releases/download/v0.0.5/Switch_Display_0_0_5.pext
+  ReleaseDate: 2021-11-16
+  PackageUrl: https://github.com/konnogatto/SwitchDisplay/releases/download/v0.0.6/SwitchDisplay_0_0_6.pext
   Changelog:
-    - Support for Playnite 9
-    - Update NAudio dependency version
+    - Fixed some settings not saving correctly
+    - Added more PolicyConfig interfaces for different versions of Windows
 

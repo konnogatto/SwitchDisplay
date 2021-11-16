@@ -4,9 +4,9 @@ using NAudio.CoreAudioApi;
 
 namespace SwitchDisplay.Interfaces
 {
-    [Guid(InterfaceIds.POLICY_CONFIG_7_IID),
+    [Guid(InterfaceIds.POLICY_CONFIG_X_RS3_IID),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IPolicyConfig
+    internal interface IPolicyConfigRS3
     {
         [PreserveSig]
         int GetMixFormat(string pszDeviceName, IntPtr ppFormat);

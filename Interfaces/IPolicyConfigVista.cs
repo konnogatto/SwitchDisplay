@@ -4,7 +4,7 @@ using NAudio.CoreAudioApi;
 
 namespace SwitchDisplay.Interfaces
 {
-    [Guid("568B9108-44BF-40B4-9006-86AFE5B5A620"),
+    [Guid(InterfaceIds.POLICY_CONFIG_VISTA_IID),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface IPolicyConfigVista
     {

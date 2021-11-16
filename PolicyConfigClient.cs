@@ -5,45 +5,48 @@ using SwitchDisplay.Interfaces;
 
 namespace SwitchDisplay
 {
-    [ComImport, Guid("870AF99C-171D-4F9E-AF0D-E63DF40C2BC9")]
-    internal class _PolicyConfigClient
-    {
-    }
     class PolicyConfigClient
     {
-        private readonly IPolicyConfig _PolicyConfig;
-        private readonly IPolicyConfigVista _PolicyConfigVista;
-        private readonly IPolicyConfig10 _PolicyConfig10;
-
-        public PolicyConfigClient()
-        {
-            _PolicyConfig = new _PolicyConfigClient() as IPolicyConfig;
-            if (_PolicyConfig != null)
-                return;
-
-            _PolicyConfigVista = new _PolicyConfigClient() as IPolicyConfigVista;
-            if (_PolicyConfigVista != null)
-                return;
-
-            _PolicyConfig10 = new _PolicyConfigClient() as IPolicyConfig10;
-        }
 
         public void SetDefaultEndpoint(string devID, Role role)
         {
-            if (_PolicyConfig != null)
+            object policyConfig = null;
+            try
             {
-                Marshal.ThrowExceptionForHR(_PolicyConfig.SetDefaultEndpoint(devID, role));
-                return;
+                policyConfig = Activator.CreateInstance(Type.GetTypeFromCLSID(new Guid(InterfaceIds.POLICY_CONFIG_CID)));
+                switch (policyConfig)
+                {
+
+                    case IPolicyConfigRS3 config:
+                        config.SetDefaultEndpoint(devID, role);
+                        break;
+                    case IPolicyConfigRS2 config:
+                        config.SetDefaultEndpoint(devID, role);
+                        break;
+                    case IPolicyConfigRS config:
+                        config.SetDefaultEndpoint(devID, role);
+                        break;
+                    case IPolicyConfig10 config:
+                        config.SetDefaultEndpoint(devID, role);
+                        break;
+                    case IPolicyConfig config:
+                        config.SetDefaultEndpoint(devID, role);
+                        break;
+                    case IPolicyConfigVista config:
+                        config.SetDefaultEndpoint(devID, role);
+                        break;
+                    case IPolicyConfigUnknown config:
+                        config.SetDefaultEndpoint(devID, role);
+                        break;
+                }
             }
-            if (_PolicyConfigVista != null)
+            finally
             {
-                Marshal.ThrowExceptionForHR(_PolicyConfigVista.SetDefaultEndpoint(devID, role));
-                return;
+                if (policyConfig != null && Marshal.IsComObject(policyConfig))
+                    Marshal.FinalReleaseComObject(policyConfig);
             }
-            if (_PolicyConfig10 != null)
-            {
-                Marshal.ThrowExceptionForHR(_PolicyConfig10.SetDefaultEndpoint(devID, role));
-            }
+
         }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Playnite.SDK;
+using Playnite.SDK.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ using System.Collections.ObjectModel;
 
 namespace SwitchDisplay
 {
-    public class SwitchDisplaySettings : ISettings
+    public class SwitchDisplaySettings : ObservableObject, ISettings
     {
-        private readonly SwitchDisplay plugin;
+        private SwitchDisplay plugin;
 
         public string FullscreenDisplay { get; set; } = string.Empty;
         public string DefaultDisplay { get; set; } = string.Empty;
@@ -26,7 +27,7 @@ namespace SwitchDisplay
 
         public bool SwitchAudio { get; set; } = true;
 
-        [JsonIgnore]
+        [DontSerialize]
         private Dictionary<string, string> _audioDevices;
 
         // Parameterless constructor must exist if you want to use LoadPluginSettings method.
@@ -49,6 +50,8 @@ namespace SwitchDisplay
                 DefaultDisplay = savedSettings.DefaultDisplay;
                 DefaultAudioDevice = savedSettings.DefaultAudioDevice;
                 FullScreenAudioDeviceList = savedSettings.FullScreenAudioDeviceList;
+                SwitchDisplays = savedSettings.SwitchDisplays;
+                SwitchAudio = savedSettings.SwitchAudio;
             }
 
         }
