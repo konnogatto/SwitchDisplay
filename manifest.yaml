@@ -1,4 +1,4 @@
-AddonId: konnogatto_SwitchDisplay
+AddonId: SwitchDisplay
 Packages:
 - Version: 0.0.6
   RequiredApiVersion: 6.0.0
