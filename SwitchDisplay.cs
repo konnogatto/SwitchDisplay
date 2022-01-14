@@ -27,6 +27,8 @@ namespace SwitchDisplay
 
         public DisplayHandler Handler { get; set; }
 
+        private string initialAudioDevice;
+
         public SwitchDisplay(IPlayniteAPI api) : base(api)
         {
             settings = new SwitchDisplaySettings(this);
@@ -59,6 +61,12 @@ namespace SwitchDisplay
                 //Audio
                 if (settings.SwitchAudio && settings.FullScreenAudioDeviceList.Count > 0)
                 {
+                    //save current audio device ID before switching
+                    if (settings.AutoDetectAudioDevice)
+                    {
+                        initialAudioDevice = AudioEnumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia).ID;
+                    }
+
                     //search available device
                     foreach(KeyValuePair<string, string> device in settings.FullScreenAudioDeviceList)
                     {
@@ -99,7 +107,8 @@ namespace SwitchDisplay
                 //Audio
                 if (settings.SwitchAudio && !String.IsNullOrEmpty(settings.DefaultAudioDevice))
                 {
-                    _policyConfigClient.SetDefaultEndpoint(settings.DefaultAudioDevice, Role.Multimedia);
+                    //switch back to initialAudioDevice if auto detect is enabled, otherwise siwtch back to settings.DefaultAudioDevice
+                    _policyConfigClient.SetDefaultEndpoint(settings.AutoDetectAudioDevice ? initialAudioDevice : settings.DefaultAudioDevice, Role.Multimedia);
                 }
             }
         }
