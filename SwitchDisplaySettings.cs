@@ -26,6 +26,8 @@ namespace SwitchDisplay
         public bool SwitchDisplays { get; set; } = true;
 
         public bool SwitchAudio { get; set; } = true;
+        public bool AutoDetectAudioDevice { get; set; } = false;
+
 
         [DontSerialize]
         private Dictionary<string, string> _audioDevices;
@@ -52,6 +54,7 @@ namespace SwitchDisplay
                 FullScreenAudioDeviceList = savedSettings.FullScreenAudioDeviceList;
                 SwitchDisplays = savedSettings.SwitchDisplays;
                 SwitchAudio = savedSettings.SwitchAudio;
+                AutoDetectAudioDevice = savedSettings.AutoDetectAudioDevice;
             }
 
         }

@@ -34,5 +34,7 @@
         </Grid>
         <TextBlock Text="Default Audiodevice:"/>
         <ComboBox ItemsSource="{Binding EnumerateAudioDevices}" SelectedValue="{Binding DefaultAudioDevice, Mode=TwoWay}" SelectedValuePath="Key" DisplayMemberPath="Value" />
+        <Separator Height="5" Margin="0"/>
+        <CheckBox IsChecked="{Binding AutoDetectAudioDevice}" Content="Auto detect audio device" />
     </StackPanel>
 </UserControl>
