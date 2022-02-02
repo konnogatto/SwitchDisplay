@@ -6,14 +6,14 @@
              mc:Ignorable="d"
              d:DesignHeight="400" d:DesignWidth="600">
     <StackPanel>
-        <CheckBox IsChecked="{Binding SwitchDisplays}" Content="Switch displays:" />
-        <TextBlock Text="Fullscreen Display:"/>
+        <CheckBox IsChecked="{Binding SwitchDisplays}" Content="{DynamicResource LOCSwitchDisplaySwitchDisplays}" />
+        <TextBlock Text="{DynamicResource LOCSwitchDisplayFullscreenDisplay}"/>
         <ComboBox ItemsSource="{Binding EnumerateDisplays}" SelectedValue="{Binding FullscreenDisplay, Mode=TwoWay}" SelectedValuePath="Key" DisplayMemberPath="Value" />
-        <TextBlock Text="Default Display:"/>
+        <TextBlock Text="{DynamicResource LOCSwitchDisplayDefaultDisplay}"/>
         <ComboBox ItemsSource="{Binding EnumerateDisplays}" SelectedValue="{Binding DefaultDisplay, Mode=TwoWay}" SelectedValuePath="Key" DisplayMemberPath="Value" />
         <Separator Height="10" Margin="0"/>
-        <CheckBox IsChecked="{Binding SwitchAudio}" Content="Switch audio:" />
-        <TextBlock Text="Fullscreen Audiodevice:"/>
+        <CheckBox IsChecked="{Binding SwitchAudio}" Content="{DynamicResource LOCSwitchDisplaySwitchAudio}" />
+        <TextBlock Text="{DynamicResource LOCSwitchDisplayFullscreenAudioOutput}"/>
         <Grid HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -25,16 +25,16 @@
             </Grid.RowDefinitions>
             <ListBox Grid.Column="0" Grid.Row="0" Name="DevicesOrderList"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  ItemsSource="{Binding FullScreenAudioDeviceList}" DisplayMemberPath="Value" SelectionMode="Single" Height="120" Margin="0,0,0,5"/>
             <WrapPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Height="100" VerticalAlignment="Top" Orientation="Vertical" Width="150">
-                <Button x:Name="MoveAudioDeviceUp" Content="Up" HorizontalAlignment="Stretch" Click="MoveAudioDeviceUp_Click"/>
-                <Button x:Name="MoveAudioDeviceDown" Content="Down" HorizontalAlignment="Stretch" Click="MoveAudioDeviceDown_Click"/>
-                <Button x:Name="RemoveAudioDevice" Content="Remove" Click="RemoveAudioDevice_Click" Width="100"/>
+                <Button x:Name="MoveAudioDeviceUp" Content="{DynamicResource LOCSwitchDisplayUp}" HorizontalAlignment="Stretch" Click="MoveAudioDeviceUp_Click"/>
+                <Button x:Name="MoveAudioDeviceDown" Content="{DynamicResource LOCSwitchDisplayDown}" HorizontalAlignment="Stretch" Click="MoveAudioDeviceDown_Click"/>
+                <Button x:Name="RemoveAudioDevice" Content="{DynamicResource LOCSwitchDisplayRemove}" Click="RemoveAudioDevice_Click" Width="100"/>
             </WrapPanel>
             <ComboBox  Grid.Column="0" Grid.Row="1" x:Name="FullscreenAudioDeviceList" HorizontalAlignment="Stretch" ItemsSource="{Binding EnumerateAudioDevices, Mode=OneWay}" SelectedValuePath="Key" DisplayMemberPath="Value" VerticalAlignment="Top"/>
-            <Button  Grid.Column="1" Grid.Row="1" Name="AddFullscreenAudioDevice" Content="Add" HorizontalAlignment="Stretch" Click="AddFullscreenAudioDevice_Click" Width="100"/>
+            <Button  Grid.Column="1" Grid.Row="1" Name="AddFullscreenAudioDevice" Content="{DynamicResource LOCSwitchDisplayAdd}" HorizontalAlignment="Stretch" Click="AddFullscreenAudioDevice_Click" Width="100"/>
         </Grid>
-        <TextBlock Text="Default Audiodevice:"/>
+        <TextBlock Text="{DynamicResource LOCSwitchDisplayDefaultAudioOutput}"/>
         <ComboBox ItemsSource="{Binding EnumerateAudioDevices}" SelectedValue="{Binding DefaultAudioDevice, Mode=TwoWay}" SelectedValuePath="Key" DisplayMemberPath="Value" />
         <Separator Height="5" Margin="0"/>
-        <CheckBox IsChecked="{Binding AutoDetectAudioDevice}" Content="Auto detect audio device" />
+        <CheckBox IsChecked="{Binding AutoDetectAudioDevice}" Content="{DynamicResource LOCSwitchDisplayAutoDetectAudioOutput}" />
     </StackPanel>
 </UserControl>

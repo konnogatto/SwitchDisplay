@@ -89,7 +89,7 @@ namespace SwitchDisplay
         [JsonIgnore]
         public Dictionary<string, string> EnumerateDisplays
         {
-            get => plugin.Handler.Enumerate().ToDictionary(display => display.DeviceName, display => String.Format("{0} at {1}", display.MonitorString, display.DeviceString));
+            get => plugin.Handler.Enumerate().ToDictionary(display => display.DeviceName, display => String.Format(ResourceProvider.GetString("LOCSwitchDisplayDisplayString"), display.MonitorString, display.DeviceString));
         }
         [JsonIgnore]
         public Dictionary<string, string> EnumerateAudioDevices
