@@ -1,5 +1,11 @@
 AddonId: SwitchDisplay
 Packages:
+- Version: 0.1.1
+  RequiredApiVersion: 6.0.0
+  ReleaseDate: 2022-02-03
+  PackageUrl: https://github.com/konnogatto/SwitchDisplay/releases/download/v0.1.1/SwitchDisplay_0_1_1.pext
+  Changelog:
+    - Added Chinese (Simplified)
 - Version: 0.1.0
   RequiredApiVersion: 6.0.0
   ReleaseDate: 2022-02-02
