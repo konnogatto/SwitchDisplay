@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0"?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String x:Key="LOCSwitchDisplaySwitchDisplays">Bytt skjermer:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayFullscreenDisplay">Fullscreen Display:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDefaultDisplay">Default Display:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDisplayString">{0} at {1}</sys:String>
-    <sys:String x:Key="LOCSwitchDisplaySwitchAudio">Switch Audio:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayFullscreenAudioOutput">Fullscreen Audio Output:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDefaultAudioOutput">Default Audio Output:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayAutoDetectAudioOutput">Auto Detect Audio Output:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayUp">Up</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDown">Down</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayRemove">Remove</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayAdd">Add</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayFullscreenDisplay">Skjerm som skal brukes i fullskjermmodus:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDefaultDisplay">Standardskjerm:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDisplayString">{0} på {1}</sys:String>
+    <sys:String x:Key="LOCSwitchDisplaySwitchAudio">Bytt lydutgang:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayFullscreenAudioOutput">Lydutgang i fullskjermmodus:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDefaultAudioOutput">Standard lydutgang:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayAutoDetectAudioOutput">Oppdag lydutgang automatisk:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayUp">Opp</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDown">Ned</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayRemove">Fjern</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayAdd">Legg til</sys:String>
 </ResourceDictionary>
