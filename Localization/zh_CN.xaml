@@ -5,11 +5,11 @@
     <sys:String x:Key="LOCSwitchDisplayDefaultDisplay">默认显示：</sys:String>
     <sys:String x:Key="LOCSwitchDisplayDisplayString">{0} 于 {1}</sys:String>
     <sys:String x:Key="LOCSwitchDisplaySwitchAudio">切换音频：</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayFullscreenAudioOutput">全屏音频输出</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDefaultAudioOutput">默认音频输出</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayAutoDetectAudioOutput">自动检测音频输出</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayFullscreenAudioOutput">全屏音频输出：</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDefaultAudioOutput">默认音频输出：</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayAutoDetectAudioOutput">自动检测音频输出：</sys:String>
     <sys:String x:Key="LOCSwitchDisplayUp">上</sys:String>
     <sys:String x:Key="LOCSwitchDisplayDown">下</sys:String>
     <sys:String x:Key="LOCSwitchDisplayRemove">移除</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayAdd">添</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayAdd">添加</sys:String>
 </ResourceDictionary>
