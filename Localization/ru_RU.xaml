@@ -2,13 +2,13 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String x:Key="LOCSwitchDisplaySwitchDisplays">Переключать экраны:</sys:String>
     <sys:String x:Key="LOCSwitchDisplayFullscreenDisplay">Экран в полноэкранном режиме:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDefaultDisplay">Экран по-умолчанию:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDefaultDisplay">Экран по умолчанию:</sys:String>
     <sys:String x:Key="LOCSwitchDisplayDisplayString">{0} на {1}</sys:String>
     <sys:String x:Key="LOCSwitchDisplaySwitchAudio">Переключать звук:</sys:String>
     <sys:String x:Key="LOCSwitchDisplayFullscreenAudioOutput">Звуковой выход в полноэкранном режиме:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDefaultAudioOutput">Звуковой выход по-умолчанию:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDefaultAudioOutput">Звуковой выход по умолчанию:</sys:String>
     <sys:String x:Key="LOCSwitchDisplayAutoDetectAudioOutput">Определять звуковой выход автоматически:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayUp">Ввер</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayUp">Вверх</sys:String>
     <sys:String x:Key="LOCSwitchDisplayDown">Вниз</sys:String>
     <sys:String x:Key="LOCSwitchDisplayRemove">Удалить</sys:String>
     <sys:String x:Key="LOCSwitchDisplayAdd">Добавить</sys:String>
