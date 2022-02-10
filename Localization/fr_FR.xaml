@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0"?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <sys:String x:Key="LOCSwitchDisplaySwitchDisplays">Switch Displays:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayFullscreenDisplay">Fullscreen Display:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDefaultDisplay">Default Display:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDisplayString">{0} at {1}</sys:String>
-    <sys:String x:Key="LOCSwitchDisplaySwitchAudio">Switch Audio:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayFullscreenAudioOutput">Fullscreen Audio Output:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDefaultAudioOutput">Default Audio Output:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayAutoDetectAudioOutput">Auto Detect Audio Output:</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayUp">Up</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayDown">Down</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayRemove">Remove</sys:String>
-    <sys:String x:Key="LOCSwitchDisplayAdd">Add</sys:String>
+    <sys:String x:Key="LOCSwitchDisplaySwitchDisplays">Changer d'affichage:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayFullscreenDisplay">Affichage plein écran:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDefaultDisplay">Affichage par défaut:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDisplayString">{0} à {1}</sys:String>
+    <sys:String x:Key="LOCSwitchDisplaySwitchAudio">Changer le son:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayFullscreenAudioOutput">Sortie audio en plein écran:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDefaultAudioOutput">Sortie audio par défaut:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayAutoDetectAudioOutput">Détecter automatiquement la sortie audio:</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayUp">Haut</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayDown">Bas</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayRemove">Retirer</sys:String>
+    <sys:String x:Key="LOCSwitchDisplayAdd">Ajouter</sys:String>
 </ResourceDictionary>
