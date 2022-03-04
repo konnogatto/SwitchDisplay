@@ -1,3 +1,6 @@
+# Temporaly abandoned
+With uncertaintly with the state of the Internet access in Russia in the future caused by invasion to Ukraine this project is abandoned until further notice. Feel free to fork.
+
 # SwitchDisplay
 A Playnite extension that switches primary display and audio output in a fullscreen mode
 
